@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Array for citys">
+
+        <template for:each={citys} for:item=cities>
+           <p key={cities}> {cities} </p>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Array -iteratior">
+        <template iterator:it={citys}>
+           <p key={it.value}> {it.value}</p>
+
+        </template>
+
+    </lightning-card>
+    
+</template>

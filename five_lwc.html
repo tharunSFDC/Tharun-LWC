@@ -1,0 +1,31 @@
+<template>
+
+    <lightning-card title="Even numbers for each">
+        <template for:each={evennumber} for:item=enumber>
+            <p key={enumber}>{enumber}</p>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Even number -iteration ">
+
+        <template iterator:it={evennumber}>
+            <p key={it.value}>{it.value} </p>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Student Details">
+       Student Name: {student.name}  <br/>
+        Student city: {student.city} <br/>
+        Student Branch: {student.dept} <br/>
+       Student Age: {student.age} <br/>
+    </lightning-card>
+    
+    <lightning-card>
+        <template for:each={student} for:item=newstd>
+            <p key={newstd.name}>Student Name:{newstd.name}</p>
+            <p key={newstd.city}>Student city: {newstd.city}</p>
+            <p key={newstd.dept}>Student Branch:{newstd.dept}</p>
+            <p key={newstd.age}>Student Age:{newstd.age}</p>
+        </template>
+    </lightning-card>
+</template>
