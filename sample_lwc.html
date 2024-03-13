@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="sample Input form">
+        <lightning-input label="Name" value={Name} name={ename}></lightning-input>
+        <lightning-input label="Email" value={email} name={nemail}></lightning-input>
+        <lightning-input label="Mobile" value={Mobile} name={nMobile}></lightning-input>
+
+        <lightning-button label="Submit" onclick={handle}></lightning-button>
+
+        <b>hello: {Name}</b> <br/>
+        <b>Email: {email}</b> <br/>
+        <b>Mobile: {Mobile}</b> <br/>
+
+        <p>Thank You</p>
+
+        
+    </lightning-card>
+    
+</template>
