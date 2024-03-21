@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Serach Contacts">
+        <lightning-input type="search" label="Enter the Contacts" value={skeys} onchange={handlekey}></lightning-input>
+
+        <p>*********Wire a property*********</p>
+
+        <template if:true={serachcontacs.data}>
+            <template for:each={serachcontacs.data} for:item="con">
+                <p key={con.id}>FirstName:{con.FirstName}</p>
+                <p key={con.id}>LastName:{con.LastName}</p>
+                <p key={con.id}>Phone:{con.PhoneName}</p>
+                <p key={con.id}>Email:{con.EmailName}</p>
+            </template>
+            <template if:true={serachcontacs.error}>
+                <p>Soory we Connot print the Contacts records</p>
+            </template>
+
+        </template>
+
+        <!--Wire a Function-->
+        <p>*******Wire a Function</p>
+        <template for:each={condata} for:item="cn">
+            <p key={cn.id}>ContactName:{cn.Name}</p>
+        </template>
+    </lightning-card>
+    
+</template>
