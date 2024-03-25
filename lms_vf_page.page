@@ -1,0 +1,52 @@
+<apex:page>
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+This is your new Page
+<div>
+    <p>Enter message here:</p>
+    <input type="text" id="themessage"/><br/>
+    <button onclick="publish()">publish button</button><br/>
+    <button onclick="sub()">sub</button><br/>
+    <button onclick="unsub()">unsub</button> <br/>
+
+    <p> Received Message:</p>
+    <label id="mcmessagetext"/>
+</div>
+<script>
+    var samplelmc="{!$MessageChannel.lmessage__c}";
+    var sunscr;
+    function publish()
+    {
+        const message={
+            messageToSend:document.getElementById('themessage'),
+            mobileNumber:'This is from visaualfroce page',
+            sourceSystem:'56789876'
+        };
+        sforce.one.publish(samplelmc,message);
+
+    }
+    function displaymessage(message)
+    {
+        var textlable=document.querySelector('#mcmessagetext');
+        textlable.innerHTML=message?JSON.stringify(message,null,'\t'):'no message for lwc';
+
+    }
+    function sub()
+    {
+        if(!sunscr)
+        {
+            sunscr=sforce.one.subscribe(samplelmc,displaymessage);
+        }
+
+    }
+    function unsub()
+    {
+        if(sunscr)
+        {
+            sforce.one.unsubscribe(unsub);
+            sunscr=null;
+        }
+
+    }
+</script>
+</apex:page>

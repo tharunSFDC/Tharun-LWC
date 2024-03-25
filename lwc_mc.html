@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Lwc web components">
+        <p>MessageChannel:My MessageChannel__c</p>
+        <lightning-input type="text" 
+                        label="Enter Text"  
+                        value={mymessage} 
+                        onchange={handletext}>
+                    </lightning-input>
+        <lightning-button label="Publish" onclick={publishmc}>    
+        </lightning-button>
+        <lightning-button label="Sub" onclick={submc}></lightning-button>
+        <lightning-button label="unSub" onclick={unsubmc}></lightning-button>
+
+        <p> Message Recieved from visualforce page:</p>
+        <lightning-formatted-time value={recmessage}></lightning-formatted-time>
+
+    </lightning-card>
+    
+</template>
